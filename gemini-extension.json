@@ -1,0 +1,10 @@
+{
+  "name": "rus-sh-mcp",
+  "version": "1.0.0",
+  "description": "Make, find, pause and track short links and QR codes from your AI assistant.",
+  "mcpServers": {
+    "rus-sh": {
+      "httpUrl": "https://rus.sh/mcp"
+    }
+  }
+}

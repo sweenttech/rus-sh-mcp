@@ -1,0 +1,21 @@
+{
+	"$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+	"name": "sh.rus/mcp",
+	"title": "Rus.sh",
+	"description": "Make, find, pause and track short links and QR codes from your AI assistant.",
+	"version": "1.0.0",
+	"websiteUrl": "https://rus.sh",
+	"icons": [
+		{
+			"src": "https://rus.sh/images/brand/mcp-icon-512.png",
+			"mimeType": "image/png",
+			"sizes": ["512x512"]
+		}
+	],
+	"remotes": [
+		{
+			"type": "streamable-http",
+			"url": "https://rus.sh/mcp"
+		}
+	]
+}

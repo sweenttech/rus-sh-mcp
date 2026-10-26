@@ -1,0 +1,14 @@
+{
+  "name": "rus-sh",
+  "displayName": "Rus.sh",
+  "version": "1.0.0",
+  "description": "Make, find, pause and track short links and QR codes from your AI assistant.",
+  "author": {
+    "name": "Sweent LLC",
+    "email": "support@rus.sh"
+  },
+  "homepage": "https://rus.sh/pages/ai",
+  "license": "MIT",
+  "keywords": ["rus.sh", "short links", "url shortener", "qr codes", "link analytics", "mcp"],
+  "logo": "assets/logo.png"
+}
