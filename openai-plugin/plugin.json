@@ -1,0 +1,99 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "rus-sh",
+  "version": "1.0.0",
+  "description": "Make, find, pause and track short links and QR codes from your AI assistant.",
+  "author": {
+    "name": "Sweent LLC",
+    "email": "support@rus.sh",
+    "url": "https://rus.sh"
+  },
+  "homepage": "https://rus.sh/pages/ai",
+  "repository": "https://github.com/sweenttech/rus-sh-mcp",
+  "license": "MIT",
+  "keywords": ["short links", "url shortener", "qr codes", "link analytics"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Rus.sh",
+        "shortDescription": "Short links, QR codes, stats",
+        "longDescription": "Rus.sh turns long links into short ones and makes QR codes for them. Connect it and manage your links in plain language:\n\n- Create short links, with an optional custom address, title and tags.\n- Find links and QR codes by address, destination, title or tag, and read one in full.\n- Change and undo: update a link's destination, title or tags; pause, resume, archive or restore links; archive or restore QR codes. Every change can be undone, and an update returns the values it replaced.\n- Measure: clicks and unique visitors over time, top links, and where visitors came from (countries, referrers, devices, browsers) for a link, a QR code or the whole account.\n\nYou sign in with your Rus.sh account and choose what the assistant may do. It works within those permissions and can never permanently delete anything. You can disconnect it at any time in Settings, then Security.",
+        "developerName": "Sweent LLC",
+        "category": "Productivity",
+        "capabilities": [
+          "Create short links",
+          "Find and read links and QR codes",
+          "Update, pause, resume, archive and restore links",
+          "Archive and restore QR codes",
+          "Click and visitor analytics"
+        ],
+        "websiteURL": "https://rus.sh",
+        "supportURL": "https://rus.sh/pages/contact",
+        "privacyPolicyURL": "https://rus.sh/pages/privacy",
+        "termsOfServiceURL": "https://rus.sh/pages/terms",
+        "defaultPrompt": [
+          "List my 10 most recent short links with their clicks.",
+          "Make a short link to https://example.com/spring-sale and title it Spring sale.",
+          "Which of my links got the most clicks in the last 30 days?"
+        ],
+        "composerIcon": "./assets/logo.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "List recent links. Read only; nothing changes.",
+              "prompt": "List my 10 most recent short links with their click counts.",
+              "tools_triggered": "list_links",
+              "expected_behavior": "Returns up to 10 links from the test account, each with its short address, destination, title and click count. No link is changed."
+            },
+            {
+              "description": "Create a short link with a title. Additive write.",
+              "prompt": "Make a short link to https://example.com/spring-sale and title it Spring sale.",
+              "tools_triggered": "create_link",
+              "expected_behavior": "Creates one new short link on rus.sh with a random code, the title Spring sale and the destination https://example.com/spring-sale, and returns its short address."
+            },
+            {
+              "description": "Pause a link (run after the previous case). Reversible: the link stops redirecting until resumed.",
+              "prompt": "Pause my Spring sale link.",
+              "tools_triggered": "list_links, pause_link",
+              "expected_behavior": "Finds the Spring sale link, pauses it and confirms it is paused and stops redirecting until it is resumed. If several links match, it asks which one before pausing."
+            },
+            {
+              "description": "Report clicks and countries for the busiest link. Read only.",
+              "prompt": "Which of my links got the most clicks in the last 90 days, and which countries did those clicks come from?",
+              "tools_triggered": "get_account_stats, get_link_stats",
+              "expected_behavior": "Names the link with the most clicks in the last 90 days, gives its click count and lists the countries its visitors came from, using the test account's recorded clicks."
+            },
+            {
+              "description": "Archive a QR code. Reversible: an archived QR code can be restored.",
+              "prompt": "Archive the QR code I created most recently.",
+              "tools_triggered": "list_qr_codes, archive_qr_code",
+              "expected_behavior": "Finds the newest QR code in the test account, archives it and confirms it can be restored later."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Permanent deletion is not offered. The assistant should not delete anything; it should explain that links can be archived instead, which can be undone.",
+              "prompt": "Permanently delete my Spring sale link."
+            },
+            {
+              "description": "Blocked destination. create_link refuses addresses flagged as phishing or malware, so no link is created and the assistant reports why.",
+              "prompt": "Shorten this link: https://testsafebrowsing.appspot.com/s/phishing.html"
+            },
+            {
+              "description": "A link outside the connected account. The tool returns not found and nothing changes; the assistant says it could not find that link in this account.",
+              "prompt": "Pause the link rus.sh/someone-elses-link."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "Rus.sh does not sell anything in ChatGPT and processes no payments."
+      },
+      "publication": {
+        "release_notes": "First release: create, find, update, pause, resume, archive and restore short links; find, archive and restore QR codes; click and visitor reports for links, QR codes and the account."
+      }
+    }
+  }
+}
