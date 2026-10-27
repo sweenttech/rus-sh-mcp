@@ -4,6 +4,8 @@
 
 # Rus.sh MCP server
 
+[![Rus.sh MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/sh.rus/mcp/badges/score.svg)](https://glama.ai/mcp/connectors/sh.rus/mcp)
+
 Make, find, pause and track short links and QR codes from your AI assistant.
 
 [Rus.sh](https://rus.sh) is a link shortener with QR codes and click analytics. Its MCP server is hosted, so you don't install or run anything: add the address below to your assistant and sign in.
