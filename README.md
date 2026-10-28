@@ -29,7 +29,7 @@ The assistant works within the permissions you approve and can never permanently
 
 ## Connect your assistant
 
-Step-by-step guides with copy buttons are at **[rus.sh/pages/ai](https://rus.sh/pages/ai)**. Signed-in users also have them under **user menu → Connect an AI app**.
+Step-by-step guides with copy buttons are at **[rus.sh/pages/ai](https://rus.sh/pages/ai)**. Signed-in users also have them under **user menu → Connect an AI app**, which can create an API key and fill it into each command.
 
 **Claude (claude.ai and Claude Desktop):** Customize → Connectors → Add → Add custom connector. Name it Rus.sh, paste `https://rus.sh/mcp`, then choose Add and Connect.
 
@@ -62,7 +62,13 @@ codex mcp add rus-sh --url https://rus.sh/mcp
 codex mcp login rus-sh
 ```
 
-**Gemini CLI:**
+**Antigravity CLI:** its own sign-in does not work with Rus.sh yet, so connect it with an API key. Create one in Rus.sh under **user menu → Connect an AI app → Antigravity CLI → Use an API key**, then copy the filled-in command:
+
+```bash
+agy mcp add --header "Authorization: Bearer <your key>" rus-sh https://rus.sh/mcp
+```
+
+**Gemini CLI** (Gemini Code Assist licences):
 
 ```bash
 gemini extensions install https://github.com/sweenttech/rus-sh-mcp
