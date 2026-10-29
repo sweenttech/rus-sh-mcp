@@ -73,22 +73,10 @@
               "expected_behavior": "Names the link with the most clicks in the last 90 days, gives its click count and lists the countries its visitors came from, using the test account's recorded clicks."
             },
             {
-              "description": "Archive a QR code. Reversible: an archived QR code can be restored.",
-              "prompt": "Archive the QR code I created most recently.",
-              "tools_triggered": "list_qr_codes, archive_qr_code",
-              "expected_behavior": "Finds the newest QR code in the test account, archives it and confirms it can be restored later."
-            },
-            {
               "description": "Create a QR code for a web address and get its image. Additive write; the image link expires after about 10 minutes.",
               "prompt": "Make a QR code for https://rus.sh and give me a link to its image.",
               "tools_triggered": "create_qr_code, get_qr_code_image",
               "expected_behavior": "Creates one QR code that opens https://rus.sh and returns a temporary link to its PNG image, which expires after about 10 minutes."
-            },
-            {
-              "description": "Rename a QR code. Reversible: the reply includes the previous title.",
-              "prompt": "Rename the QR code I created most recently to Website QR.",
-              "tools_triggered": "list_qr_codes, update_qr_code",
-              "expected_behavior": "Finds the newest QR code, changes its title to Website QR and reports the previous title so the change can be undone."
             }
           ],
           "negative": [
