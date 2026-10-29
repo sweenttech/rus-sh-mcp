@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "rus-sh",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Make, find, pause and track short links and QR codes from your AI assistant.",
   "author": {
     "name": "Sweent LLC",
@@ -11,20 +11,26 @@
   "homepage": "https://rus.sh/pages/ai",
   "repository": "https://github.com/sweenttech/rus-sh-mcp",
   "license": "MIT",
-  "keywords": ["short links", "url shortener", "qr codes", "link analytics"],
+  "keywords": [
+    "short links",
+    "url shortener",
+    "qr codes",
+    "link analytics"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "Rus.sh",
         "shortDescription": "Short links, QR codes, stats",
-        "longDescription": "Rus.sh turns long links into short ones and makes QR codes for them. Connect it and manage your links in plain language:\n\n- Create short links, with an optional custom address, title and tags.\n- Find links and QR codes by address, destination, title or tag, and read one in full.\n- Change and undo: update a link's destination, title or tags; pause, resume, archive or restore links; archive or restore QR codes. Every change can be undone, and an update returns the values it replaced.\n- Measure: clicks and unique visitors over time, top links, and where visitors came from (countries, referrers, devices, browsers) for a link, a QR code or the whole account.\n\nYou sign in with your Rus.sh account and choose what the assistant may do. It works within those permissions and can never permanently delete anything. You can disconnect it at any time in Settings, then Security.",
+        "longDescription": "Rus.sh turns long links into short ones and makes QR codes for them. Connect it and manage your links in plain language:\n\n- Create short links, with an optional custom address, title and tags.\n- Make QR codes for a web address, a WiFi network, an email, a phone call or a text message, change how they look, and get a link to download the image.\n- Find links and QR codes by address, destination, title or tag, and read one in full, including whether it is working now.\n- Change and undo: update a link's destination, title or tags; pause, resume, archive or restore links; update, archive or restore QR codes. Every change can be undone, and an update returns the values it replaced.\n- Measure: clicks and unique visitors over time, top links, and where visitors came from (countries, referrers, devices, browsers) for a link, a QR code or the whole account.\n- Check what your account can use and how much of this month's allowance is left.\n\nYou sign in with your Rus.sh account and choose what the assistant may do. It works within those permissions and can never permanently delete anything. You can disconnect it at any time in Settings, then Security.",
         "developerName": "Sweent LLC",
         "category": "Productivity",
         "capabilities": [
           "Create short links",
           "Find and read links and QR codes",
           "Update, pause, resume, archive and restore links",
-          "Archive and restore QR codes",
+          "Create, update, archive and restore QR codes",
+          "Get a QR code image",
           "Click and visitor analytics"
         ],
         "websiteURL": "https://rus.sh",
@@ -71,6 +77,18 @@
               "prompt": "Archive the QR code I created most recently.",
               "tools_triggered": "list_qr_codes, archive_qr_code",
               "expected_behavior": "Finds the newest QR code in the test account, archives it and confirms it can be restored later."
+            },
+            {
+              "description": "Create a QR code for a web address and get its image. Additive write; the image link expires after about 10 minutes.",
+              "prompt": "Make a QR code for https://rus.sh and give me a link to its image.",
+              "tools_triggered": "create_qr_code, get_qr_code_image",
+              "expected_behavior": "Creates one QR code that opens https://rus.sh and returns a temporary link to its PNG image, which expires after about 10 minutes."
+            },
+            {
+              "description": "Rename a QR code. Reversible: the reply includes the previous title.",
+              "prompt": "Rename the QR code I created most recently to Website QR.",
+              "tools_triggered": "list_qr_codes, update_qr_code",
+              "expected_behavior": "Finds the newest QR code, changes its title to Website QR and reports the previous title so the change can be undone."
             }
           ],
           "negative": [
@@ -92,7 +110,7 @@
         "commerce_description": "Rus.sh does not sell anything in ChatGPT and processes no payments."
       },
       "publication": {
-        "release_notes": "First release: create, find, update, pause, resume, archive and restore short links; find, archive and restore QR codes; click and visitor reports for links, QR codes and the account."
+        "release_notes": "2.0.0: create QR codes (web address, WiFi, email, phone, text), update their title, look and content, and get a temporary image link; account features and this month's usage; clearer answers when something is refused; every reply now says whether a link or printed QR code is working."
       }
     }
   }

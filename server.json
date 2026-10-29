@@ -3,7 +3,7 @@
 	"name": "sh.rus/mcp",
 	"title": "Rus.sh",
 	"description": "Make, find, pause and track short links and QR codes from your AI assistant.",
-	"version": "1.0.1",
+	"version": "2.0.0",
 	"websiteUrl": "https://rus.sh",
 	"repository": {
 		"url": "https://github.com/sweenttech/rus-sh-mcp",
