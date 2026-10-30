@@ -21,9 +21,9 @@ https://rus.sh/mcp
 
 ## What your assistant can do
 
-| Look things up | Make new links | Change and undo |
+| Look things up | Make new links and QR codes | Change and undo |
 |---|---|---|
-| Get account, list links, get link, list QR codes, get QR code, get account / link / QR code analytics | Create link | Update link; archive, restore, pause and resume links; archive and restore QR codes |
+| Get account (what it can use and this month's usage), list links, get link, list QR codes, get QR code, get a QR code image (a link that expires after about 10 minutes), get account / link / QR code analytics | Create link; create QR code (web address, WiFi, email, phone call or text message) | Update link; archive, restore, pause and resume links; update a QR code's title, look or content; archive and restore QR codes |
 
 The assistant works within the permissions you approve and can never permanently delete anything. Every change can be undone.
 
