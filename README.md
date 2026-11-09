@@ -5,6 +5,7 @@
 # Rus.sh MCP server
 
 [![Rus.sh MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/sh.rus/mcp/badges/score.svg)](https://glama.ai/mcp/connectors/sh.rus/mcp)
+[![Rus.sh on mcptry: sign-in and score](https://mcptry.com/badge/sh.rus/mcp.svg)](https://mcptry.com/servers/sh.rus/mcp)
 
 Make, find, pause and track short links and QR codes from your AI assistant.
 
@@ -18,6 +19,10 @@ https://rus.sh/mcp
 - **Sign-in:** OAuth 2.1. Your assistant opens Rus.sh, you sign in and choose what it may do. An API key also works.
 - **Plans:** every plan, including Free.
 - **MCP Registry:** [`sh.rus/mcp`](https://registry.modelcontextprotocol.io/v0.1/servers?search=sh.rus)
+
+## Who makes Rus.sh
+
+Rus.sh is built and operated by Sweent LLC, a veteran-owned small business in Daytona Beach, Florida. Sweent holds Federal Government (GSA Multiple Award Schedule) and Florida State Term contracts for IT services, and builds software for federal, state and city agencies. Its registration is public in [SAM.gov](https://sam.gov) (UEI MZQ5EU38G9J4, CAGE 9UFS7). See [the company's credentials](https://rus.sh/pages/about#who-builds-rus-sh).
 
 ## What your assistant can do
 
