@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "rus-sh",
-  "version": "2.0.0",
+  "version": "2.2.0",
   "description": "Make, find, pause and track short links and QR codes from your AI assistant.",
   "author": {
     "name": "Sweent LLC",
@@ -22,7 +22,7 @@
       "interface": {
         "displayName": "Rus.sh",
         "shortDescription": "Short links, QR codes, stats",
-        "longDescription": "Rus.sh turns long links into short ones and makes QR codes for them. Connect it and manage your links in plain language:\n\n- Create short links, with an optional custom address, title and tags.\n- Make QR codes for a web address, a WiFi network, an email, a phone call or a text message, change how they look, and get a link to download the image.\n- Find links and QR codes by address, destination, title or tag, and read one in full, including whether it is working now.\n- Change and undo: update a link's destination, title or tags; pause, resume, archive or restore links; update, archive or restore QR codes. Every change can be undone, and an update returns the values it replaced.\n- Measure: clicks and unique visitors over time, top links, and where visitors came from (countries, referrers, devices, browsers) for a link, a QR code or the whole account.\n- Check what your account can use and how much of this month's allowance is left.\n\nYou sign in with your Rus.sh account and choose what the assistant may do. It works within those permissions and can never permanently delete anything. You can disconnect it at any time in Settings, then Security.",
+        "longDescription": "Rus.sh turns long links into short ones and makes QR codes for them. Connect it and manage your links in plain language:\n\n- Create short links, with an optional custom address, title and tags.\n- Make QR codes for a web address, a WiFi network, an email, a phone call, a text message or plain text, change how they look, and get a link to download the image.\n- Find links and QR codes by address, destination, title or tag, and read one in full, including whether it is working now.\n- Change and undo: update a link's destination, title or tags; pause, resume, archive or restore links; update, archive or restore QR codes. Every change can be undone, and an update returns the values it replaced.\n- Measure: clicks and unique visitors over time, top links, and where visitors came from (countries, referrers, devices, browsers) for a link, a QR code or the whole account.\n- Check what your account can use and how much of this month's allowance is left.\n\nYou sign in with your Rus.sh account and choose what the assistant may do. It works within those permissions and can never permanently delete anything. You can disconnect it at any time in Settings, then Security.",
         "developerName": "Sweent LLC",
         "category": "Productivity",
         "capabilities": [
@@ -98,7 +98,7 @@
         "commerce_description": "Rus.sh does not sell anything in ChatGPT and processes no payments."
       },
       "publication": {
-        "release_notes": "2.0.0: create QR codes (web address, WiFi, email, phone, text), update their title, look and content, and get a temporary image link; account features and this month's usage; clearer answers when something is refused; every reply now says whether a link or printed QR code is working."
+        "release_notes": "2.2.0: every tool states all four hints explicitly (reads are idempotent; tools that change a public link or QR code are open world). 2.1.0: plain-text QR codes; QR codes made here have no monthly limit, and every QR type is on every plan. 2.0.0: create QR codes, update their title, look and content, and get a temporary image link; account features and this month's usage; clearer refusals; every reply says whether a link or printed QR code is working."
       }
     }
   }
